@@ -1,6 +1,6 @@
 # renovate-config
 
-A [shareable config preset for Renovate](https://docs.renovatebot.com/config-presets/) used in [Hatena](https://hatenacorp.jp/).
+A [shareable config preset for Renovate](https://docs.renovatebot.com/config-presets/) used in [Hatena](https://hatena.co.jp/).
 
 ```json
 {
@@ -35,6 +35,16 @@ A [shareable config preset for Renovate](https://docs.renovatebot.com/config-pre
       }
     }
   ]
+}
+```
+
+### ecspressoVersion.json5 (opt-in)
+
+Updates the [ecspresso](https://github.com/kayac/ecspresso) version defined in the `.ecspresso-version` file using `customManagers`.
+
+```json
+{
+  "extends": ["github>hatena/renovate-config:ecspressoVersion.json5"]
 }
 ```
 
@@ -111,3 +121,15 @@ or overwrite the [`schedule` option](https://docs.renovatebot.com/configuration-
 ```
 
 or extend the [Schedule Presets](https://docs.renovatebot.com/presets-schedule/).
+
+### xcodegenSwiftPackages.json5 (opt-in)
+
+Updates Swift packages in XcodeGen's `project.yml` using `customManagers`.
+
+- https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#swift-package
+
+```json
+{
+  "extends": ["github>hatena/renovate-config:xcodegenSwiftPackages.json5"]
+}
+```

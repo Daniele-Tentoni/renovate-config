@@ -1,8 +1,6 @@
 {
   "extends": [
     "config:base",
-    ":dependencyDashboard",
-    ":prConcurrentLimit10",
     ":separateMultipleMajorReleases",
     ":timezone(Asia/Tokyo)",
     "github>hatena/renovate-config:schedule",
@@ -10,20 +8,17 @@
     "github>hatena/renovate-config:automergeTypesMinor",
     "github>hatena/renovate-config:groupAndroidPackages",
     "github>hatena/renovate-config:groupCocoaPodsPackages",
+    "github>hatena/renovate-config:groupGolangPackages",
     "github>hatena/renovate-config:groupJest",
     "github>hatena/renovate-config:groupLinters",
-    "github>hatena/renovate-config:postUpdateOptions"
+    "github>hatena/renovate-config:postUpdateOptions",
+    "github>hatena/renovate-config:vulnerabilityAlerts",
+    "github>hatena/renovate-config:pinGitHubActionDigests",
+    "github>hatena/renovate-config:minimumReleaseAge"
   ],
-  "ignorePresets": [
-    ":prConcurrentLimit20"
-  ],
-  "labels": [
-    "renovate"
-  ],
+  "labels": ["renovate"],
   "dockerfile": {
-    "fileMatch": [
-      "(^|/)Dockerfile-[^/]*$"
-    ]
+    "fileMatch": ["(^|/)Dockerfile-[^/]*$"]
   },
   "npm": {
     "rangeStrategy": "bump"
@@ -31,11 +26,7 @@
   "packageRules": [
     {
       "groupName": "boto3",
-      "matchPackageNames": [
-        "boto3",
-        "botocore"
-      ]
+      "matchPackageNames": ["boto3", "botocore"]
     }
   ]
 }
-
