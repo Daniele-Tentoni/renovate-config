@@ -16,6 +16,7 @@
     "github>hatena/renovate-config:pinGitHubActionDigests",
     "github>hatena/renovate-config:minimumReleaseAge"
   ],
+  "assignees": ["daniele.tentoni.1996@gmail.com"],
   "labels": ["renovate"],
   "dockerfile": {
     "fileMatch": ["(^|/)Dockerfile-[^/]*$"]
